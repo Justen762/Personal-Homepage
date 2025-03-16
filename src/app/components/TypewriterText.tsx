@@ -1,25 +1,17 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 
-interface TypewriterTextProps {
-  text: string;
-  className?: string;
-}
-
-export default function TypewriterText({ text, className = '' }: TypewriterTextProps) {
-  const [displayText, setDisplayText] = useState('');
+export default function TypewriterText({ text, className = "" }: { text: string; className?: string }) {
+  const [displayText, setDisplayText] = useState("");
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isTypingComplete, setIsTypingComplete] = useState(false);
 
-  const startTyping = () => {
-    setDisplayText('');
+  const startTyping = useCallback(() => {
+    setDisplayText("");
     setCurrentIndex(0);
-  };
-
-  useEffect(() => {
-    // Start typing when component mounts
-    startTyping();
-  }, []); // Empty dependency array means this runs once on mount
+    setIsTypingComplete(false);
+  }, []);
 
   useEffect(() => {
     if (currentIndex < text.length) {
@@ -29,16 +21,24 @@ export default function TypewriterText({ text, className = '' }: TypewriterTextP
       }, 100);
 
       return () => clearTimeout(timeout);
+    } else {
+      setIsTypingComplete(true);
     }
   }, [currentIndex, text]);
 
+  useEffect(() => {
+    startTyping();
+  }, [startTyping]);
+
   return (
     <h1 
-      className={`${className} cursor-pointer block w-full text-center`}
-      onClick={startTyping}
+      onClick={startTyping} 
+      className={`cursor-pointer relative ${className}`}
     >
       {displayText}
-      <span className="animate-pulse">|</span>
+      <span className={`absolute ml-1 -mr-1 ${isTypingComplete ? 'animate-cursor' : 'opacity-100'}`}>
+        |
+      </span>
     </h1>
   );
 } 
