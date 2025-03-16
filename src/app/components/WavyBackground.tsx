@@ -62,13 +62,14 @@ export default function WavyBackground() {
   }, []);
 
   return (
-    <div className="fixed inset-0 w-full h-screen bg-gray-900 overflow-hidden">
+    <div className="fixed inset-0 w-full min-h-screen bg-gray-900 overflow-hidden" style={{ minHeight: '100dvh' }}>
       <svg
         id="visual"
         viewBox="0 0 3600 600"
-        className="absolute inset-0 w-[400%] h-full"
+        className="absolute inset-0 w-[400%] h-full select-none"
         preserveAspectRatio="none"
         xmlns="http://www.w3.org/2000/svg"
+        style={{ touchAction: 'none' }}
       >
         <g>
           {/* First wave layer with -400px offset */}
