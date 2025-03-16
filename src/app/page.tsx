@@ -7,14 +7,14 @@ export default function Home() {
     <>
       <WavyBackground />
       <main className="relative z-10 flex min-h-screen flex-col items-center">
-        <div className="mt-32">
+        <div className="fixed mt-32">
           <CircularImage
             src="/Assets/image.png"
             alt="Profile Image"
             size={240}
           />
+          <SocialLinks />
         </div>
-        <SocialLinks />
       </main>
     </>
   );
