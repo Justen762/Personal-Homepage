@@ -16,8 +16,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={`${inter.className} flex flex-col items-center justify-center text-center`}>
-        <main className="flex flex-col items-center justify-center text-center">
+      <body className={`${inter.className} flex flex-col items-center min-h-screen bg-gray-500`}>
+        <main className="flex flex-col items-center text-center">
           {children}
         </main>
       </body>
