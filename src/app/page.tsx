@@ -13,8 +13,8 @@ export default function Home() {
             alt="Profile Image"
             size={240}
           />
+          <SocialLinks />
         </div>
-        <SocialLinks />
       </main>
     </>
   );
