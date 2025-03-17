@@ -62,7 +62,7 @@ const socialLinks: SocialLink[] = [
 
 export default function SocialLinks() {
   return (
-    <ul className="flex justify-center mt-8 space-x-10 pt-6">
+    <ul className="flex justify-center space-x-10 pt-6">
       {socialLinks.map((link) => (
         <li key={link.label} className="group relative">
           <span className="absolute -top-8 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-sm text-gray-600 dark:text-gray-300">
