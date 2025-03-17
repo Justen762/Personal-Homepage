@@ -7,8 +7,24 @@ const config: Config = {
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
-    extend: {},
+    extend: {
+      animation: {
+        'spin-slow': 'spin 20s linear infinite',
+        'reverse-spin-slow': 'reverse-spin 25s linear infinite',
+      },
+      keyframes: {
+        'reverse-spin': {
+          from: {
+            transform: 'rotate(360deg)',
+          },
+          to: {
+            transform: 'rotate(0deg)',
+          },
+        },
+      },
+    },
   },
   plugins: [],
 }
+
 export default config 
