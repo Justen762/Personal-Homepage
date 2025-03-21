@@ -19,10 +19,8 @@ export default function RootLayout({
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
       </head>
-      <body className={`${inter.className} overflow-x-hidden overscroll-none`}>
-        <main className="flex flex-col items-center text-center">
-          {children}
-        </main>
+      <body className={`${inter.className} overflow-x-hidden bg-gray-900`}>
+        {children}
       </body>
     </html>
   );

@@ -2,7 +2,7 @@
 
 export default function WavyBackground() {
   return (
-    <div className="fixed inset-0 w-full min-h-screen bg-gray-900 overflow-hidden" style={{ minHeight: '100dvh' }}>
+    <div className="absolute inset-0 w-full min-h-screen bg-gray-900 overflow-hidden" style={{ minHeight: '100dvh' }}>
       <style jsx>{`
         @keyframes waveAnimation {
           0% {
@@ -23,7 +23,7 @@ export default function WavyBackground() {
           animation: waveAnimation 71s linear infinite;
         }
         
-        #wave1-2 {d
+        #wave1-2 {
           transform: translateX(1800px);
         }
         #wave2-2 {
